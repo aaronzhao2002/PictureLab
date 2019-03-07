@@ -90,6 +90,29 @@ public class IntArrayWorker
     
     return count;
   }
+  
+  public int getLargest()
+  {
+    int largest=matrix[0][0];
+    
+    for (int[] row: matrix)
+        for(int pixel: row)
+        {
+            if(pixel>largest)
+            largest=pixel;
+        }
+        return largest;
+  }
+  
+  public int getColTotal(int n)
+  {
+      int total=0;
+      for(int i=0; i<matrix.length;i++)
+      total+=matrix[i][0];
+      
+      return total;
+  }
+  
   /** 
    * fill the array with a pattern
    */
