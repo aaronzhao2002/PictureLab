@@ -51,23 +51,39 @@ public class PictureTester
     swan.explore();
   }
   
-  /*
-   * Aaron's Changes
-   */
-  
-  public static void testKeepOnlyBlue(){
-      Picture beach = new Picture("beach.jpg");
-      
-      beach.keepOnlyBlue();
-      beach.explore();
-      
-    }
     
-  public void keepOnlyBlue(){
+  public void testKeepOnlyBlue(){
     zeroRed();
     zeroGreen();
 }
+  public void zeroGreen()
+  {
+      Pixel[][] picture=this.getPixels2D();
+        for(Pixel[] rows: picture)
+            {
+                for(Pixel p:rows)
+                {
+                    int green=p.getGreen();
+                    p.setGreen(green-green);
+                }
+            }
+  } //END zeroGreen()
   
+  public void zeroRed()
+  {
+      Pixel[][] picture= this.getPixels2D();
+        for(Pixel[] rows: picture)
+        {
+            for(Pixel p:rows)
+            {
+                int red=p.getRed();
+                p.setRed(red-red);
+            }
+        }
+  } //END zeroRed()
+
+
+
   
   /** Main method for testing.  Every class can have a main
     * method in Java */
@@ -83,7 +99,7 @@ public class PictureTester
     //testNegate();
     //testGrayscale();
     //testFixUnderwater();
-    //testMirrorVertical();
+    testMirrorVertical();
     //testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
