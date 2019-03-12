@@ -52,35 +52,17 @@ public class PictureTester
   }
   
     
-  public void testKeepOnlyBlue(){
-    zeroRed();
-    zeroGreen();
-}
-  public void zeroGreen()
-  {
-      Pixel[][] picture=this.getPixels2D();
-        for(Pixel[] rows: picture)
-            {
-                for(Pixel p:rows)
-                {
-                    int green=p.getGreen();
-                    p.setGreen(green-green);
-                }
-            }
-  } //END zeroGreen()
   
-  public void zeroRed()
-  {
-      Pixel[][] picture= this.getPixels2D();
-        for(Pixel[] rows: picture)
-        {
-            for(Pixel p:rows)
-            {
-                int red=p.getRed();
-                p.setRed(red-red);
-            }
-        }
-  } //END zeroRed()
+      public static void testKeepOnlyBlue()
+      {
+      Picture beach = new Picture("beach.jpg");
+      
+      beach.keepOnlyBlue();
+      beach.explore();
+      
+      
+    }  
+
 
 
 

@@ -98,31 +98,6 @@ public class Picture extends SimplePicture
     }
   } //END zeroBlue()
   
-  public void zeroRed()
-  {
-      Pixel[][] picture= this.getPixels2D();
-        for(Pixel[] rows: picture)
-        {
-            for(Pixel p:rows)
-            {
-                int red=p.getRed();
-                p.setRed(red-red);
-            }
-        }
-  } //END zeroRed()
-  
-  public void zeroGreen()
-  {
-      Pixel[][] picture=this.getPixels2D();
-        for(Pixel[] rows: picture)
-            {
-                for(Pixel p:rows)
-                {
-                    int green=p.getGreen();
-                    p.setGreen(green-green);
-                }
-            }
-  } //END zeroGreen()
   
   /** Method that mirrors the picture around a 
     * vertical mirror in the center of the picture
@@ -161,6 +136,22 @@ public class Picture extends SimplePicture
     } 
   }
   
+  public void mirrorHorizontal()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    Pixel topPixel = null;
+    Pixel bottomPixel = null;
+    int width = pixels[0].length;
+    for (int row = 0; row < pixels.length; row++)
+    {
+      for (int col = 0; col < width / 2; col++)
+      {
+        topPixel = pixels[row][col];
+        bottomPixel = pixels[row][width - 1 - col];
+        topPixel.setColor(bottomPixel.getColor());
+      }
+    } 
+  }
   
   /** Mirror just part of a picture of a temple */
   public void mirrorTemple()
@@ -261,15 +252,38 @@ public class Picture extends SimplePicture
     }
   }
   
-      public static void testKeepOnlyBlue(){
-      Picture beach = new Picture("beach.jpg");
-      
-      beach.testKeepOnlyBlue();
-      beach.explore();
-      
-    } 
+    
+    public  void keepOnlyBlue(){
+    zeroRed();
+    zeroGreen();
+}
   
+    public void zeroGreen()
+  {
+      Pixel[][] picture=this.getPixels2D();
+        for(Pixel[] rows: picture)
+            {
+                for(Pixel p:rows)
+                {
+                    int green=p.getGreen();
+                    p.setGreen(green-green);
+                }
+            }
+  } //END zeroGreen()
   
+  public void zeroRed()
+  {
+      Pixel[][] picture= this.getPixels2D();
+        for(Pixel[] rows: picture)
+        {
+            for(Pixel p:rows)
+            {
+                int red=p.getRed();
+                p.setRed(red-red);
+            }
+        }
+  } //END zeroRed()
+    
   /* Main method for testing - each class in Java can have a main 
    * method 
    */
