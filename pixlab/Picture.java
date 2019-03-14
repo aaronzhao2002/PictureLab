@@ -250,6 +250,17 @@ public class Picture extends SimplePicture
     this.write("collage.jpg");
   }
   
+    public void myCollage()
+  {
+      Picture agrass1 = new Picture("agrass.jpg");
+      Picture agrass2 = new Picture("agrass.jpg");
+      Picture agrass3= new Picture("agrass.jpg");
+      this.copy(agrass1, 
+                 int startRow, int startCol,
+                 int fSR,      int fSC,
+                 int fER,      int fEC
+      
+    }
   
   /** Method to show large changes in color 
     * @param edgeDist the distance for finding edges
@@ -309,6 +320,37 @@ public class Picture extends SimplePicture
         }
   } //END zeroRed()
     
+public void copy(Picture fromPic, 
+                 int startRow, int startCol,
+                 int fSR,      int fSC,
+                 int fER,      int fEC)
+  {
+    Pixel fromPixel = null;
+    Pixel toPixel = null;
+    Pixel[][] toPixels = this.getPixels2D();
+    Pixel[][] fromPixels = fromPic.getPixels2D();
+    for (int fromRow = fSR, toRow = startRow; 
+         fromRow < fER &&
+         toRow < toPixels.length; 
+         fromRow++, toRow++)
+    {
+      for (int fromCol = fSC, toCol = startCol; 
+           fromCol < fEC &&
+           toCol < toPixels[0].length;  
+           fromCol++, toCol++)
+      {
+        fromPixel = fromPixels[fromRow][fromCol];
+        toPixel = toPixels[toRow][toCol];
+        toPixel.setColor(fromPixel.getColor());
+      }
+    }   
+  }
+  
+
+  
+  
+  
+  
   /* Main method for testing - each class in Java can have a main 
    * method 
    */

@@ -62,9 +62,7 @@ public class PictureTester
     swan.explore();
   }
   
-    
-  
-      public static void testKeepOnlyBlue()
+  public static void testKeepOnlyBlue()
       {
       Picture beach = new Picture("beach.jpg");
       
@@ -73,11 +71,23 @@ public class PictureTester
       
       
     }  
+    
+    public static void testCopy()
+{
+
+        
+}
+    
+    public static void testmyCollage(){
+            Picture canvas = new Picture("640x480.jpg");
+    canvas.myCollage();
+    canvas.explore();
+        
+}
 
 
+    
 
-
-  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -98,7 +108,8 @@ public class PictureTester
     //testMirrorGull();
     //testMirrorDiagonal();
     testCollage();
-    //testCopy();
+    testCopy();
+    testmyCollage();
     //testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
