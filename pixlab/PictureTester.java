@@ -54,11 +54,18 @@ public class PictureTester
     canvas.explore();
   }
   
+      public static void testmyCollage(){
+            Picture canvas = new Picture("640x480.jpg");
+    canvas.myCollage();
+    canvas.explore();
+        
+}
+  
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
   {
     Picture swan = new Picture("swan.jpg");
-    swan.edgeDetection(10);
+    swan.edgeDetection(11);
     swan.explore();
   }
   
@@ -74,18 +81,14 @@ public class PictureTester
     
     public static void testCopy()
 {
-
+      Picture agrass1 = new Picture("agrass.jpg");
+      Picture agrass2 = new Picture("agrass.jpg");
+      Picture agrass3= new Picture("agrass.jpg");
+      agrass1.copy(agrass1,10,10,60,160,180,230);
+      agrass1.explore();
         
 }
     
-    public static void testmyCollage(){
-            Picture canvas = new Picture("640x480.jpg");
-    canvas.myCollage();
-    canvas.explore();
-        
-}
-
-
     
 
   /** Main method for testing.  Every class can have a main
@@ -107,10 +110,10 @@ public class PictureTester
     //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
-    testCollage();
-    testCopy();
-    testmyCollage();
-    //testEdgeDetection();
+    //testCollage();
+    //testCopy();
+    //testmyCollage();
+    testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();

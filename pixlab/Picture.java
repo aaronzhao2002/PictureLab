@@ -255,13 +255,11 @@ public class Picture extends SimplePicture
       Picture agrass1 = new Picture("agrass.jpg");
       Picture agrass2 = new Picture("agrass.jpg");
       Picture agrass3= new Picture("agrass.jpg");
-      this.copy(agrass1, 
-                 int startRow, int startCol,
-                 int fSR,      int fSC,
-                 int fER,      int fEC
+      agrass1.copy(agrass1,10,10,60,160,180,230);
       
     }
-  
+
+ 
   /** Method to show large changes in color 
     * @param edgeDist the distance for finding edges
     */
